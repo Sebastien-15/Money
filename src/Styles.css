@@ -28,7 +28,7 @@
 
 .Logo_Image {
     margin-left: 1vw;
-    background-image: url(Logo.png);
+    background-image: url(https://kivebrellfseqtgmdzpo.supabase.co/storage/v1/object/sign/Images/Logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJJbWFnZXMvTG9nby5wbmciLCJpYXQiOjE2OTUwODcyOTIsImV4cCI6MTcyNjYyMzI5Mn0.dP8u0qUqloGZTbjas-Xia_G2vehADq1OqqmEIUb-Oy8&t=2023-09-19T01%3A34%3A53.088Z);
     background-size: cover;
     width: 13vw;
     height: 8vh;
@@ -38,19 +38,19 @@
 .Logo_Image2 {
     margin-left: -1vw;
     margin-bottom: -50vh;
-    background-image: url(Logo.png);
+    background-image: url(https://kivebrellfseqtgmdzpo.supabase.co/storage/v1/object/sign/Images/Logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJJbWFnZXMvTG9nby5wbmciLCJpYXQiOjE2OTUwODcyOTIsImV4cCI6MTcyNjYyMzI5Mn0.dP8u0qUqloGZTbjas-Xia_G2vehADq1OqqmEIUb-Oy8&t=2023-09-19T01%3A34%3A53.088Z);
     background-size: cover;
     width: 26vw;
     height: 14vh;
 }
 
 .LandingPage{
-    background-image: url(Background_Image_2.png);
+    background-image: url(https://kivebrellfseqtgmdzpo.supabase.co/storage/v1/object/sign/Images/Background_Image_2.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJJbWFnZXMvQmFja2dyb3VuZF9JbWFnZV8yLnBuZyIsImlhdCI6MTY5NTA4NzE2NCwiZXhwIjoxNzI2NjIzMTY0fQ.2O4q3vhIWf0W7Uurxph3gd7QhnfDOruuts-b1ajAxGY&t=2023-09-19T01%3A32%3A44.731Z);
     background-size: cover;
 }
 
 .LoginPage {
-    background-image: url(Background_Image.png);
+    background-image: url(https://kivebrellfseqtgmdzpo.supabase.co/storage/v1/object/sign/Images/Background_Image.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJJbWFnZXMvQmFja2dyb3VuZF9JbWFnZS5wbmciLCJpYXQiOjE2OTUwODczOTYsImV4cCI6MTcyNjYyMzM5Nn0.LOSMK5iNofuZVZygcAvHg0MKMBzoRQdV1y39_p5PTxk&t=2023-09-19T01%3A36%3A37.121Z);
     background-size: cover;
     width: 100vw;
     height: 100vh;
@@ -133,7 +133,7 @@
 }
 
 .loading {
-    background-image: url(Icon.png);
+    background-image: url(https://kivebrellfseqtgmdzpo.supabase.co/storage/v1/object/sign/Images/Icon.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJJbWFnZXMvSWNvbi5wbmciLCJpYXQiOjE2OTUwODczMzYsImV4cCI6MTcyNjYyMzMzNn0.Tenj8AWVhnuJPn5ofZ42Qr5NkMHjQyxCAc2Bu-hc9pA&t=2023-09-19T01%3A35%3A36.786Z);
     width: 9vw;
     height: 18vh;
     margin: auto;
