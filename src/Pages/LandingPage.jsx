@@ -8,6 +8,7 @@ export function LandingPage(){
     const [lName, setlName] = useState()
     const [EmailAddress, setEmailAddress] = useState()
     const [Password, setPassword] = useState()
+    const [id, setID] = useState()
 
     async function HandleSubmit(e){
         e.preventDefault()
@@ -20,20 +21,27 @@ export function LandingPage(){
       )
 
       if (error) {
-        throw error}
+        throw error
+      }
+      if (data){
+          setID(data.user.id)
+          const { error } = await Supabase
+            .from('User_Info')
+            .insert([
+            { first_name: fName, last_name: lName, email: EmailAddress, user_id: data.user.id }
+            ])
+
+            if (error){
+                console.log(error)
+            }
+      }
+    
     }
         catch (error) {
             alert(error)
     }    
-    const { error } = await Supabase
-    .from('User_Info')
-    .insert([
-    { first_name: fName, last_name: lName, email: EmailAddress, user_id: '0' }
-    ])
-
-    if (error){
-        console.log(error)
-    }
+    
+    
 
     }
 
@@ -42,7 +50,8 @@ export function LandingPage(){
         <form  onSubmit={HandleSubmit}>
             <div  className='LandingPage'>
             <HStack h={"10vh"} >
-            <div className='Logo_Image'> </div>
+            {/* <div className='Logo_Image'> </div> */}
+            <img src="https://wteetmksupsiwaiqmcql.supabase.co/storage/v1/object/public/Logo/Logo.png" alt="Logo" className="Logo_Image"></img>
                 <ul className='LandingPageOptions'>
                     <li>
                         <a href={`/login`}>

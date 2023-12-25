@@ -1,8 +1,11 @@
 import { Box, HStack, useToast } from "@chakra-ui/react";
 import { Supabase } from "../supabase";
+import { useEffect, useState } from "react";
 
-export function DeleteSubs ({ setToDisplay, id}){
+export function DeleteSubs ({ setToDisplay, id, theme }){
     let toast = useToast()
+    const [boxcolor, setBoxColor] = useState('#ececec')
+    const [textcolor, setTextColor] = useState('black')
 
 function deletting(id){
     async function deleting( id ){ 
@@ -54,11 +57,20 @@ function close(){
     setToDisplay(false)
 }
 
-
+useEffect(() => {
+    if (theme === 'white'){
+        setTextColor('black')
+        setBoxColor("delete_subs")
+    }
+    else{
+        setTextColor('white')
+        setBoxColor('delete_subs_dark')
+    }
+}, [theme])
 
     return (
         <section className="standout_2">
-            <div className="delete_subs">
+            <div className={boxcolor}>
                 <h2>Are you sure?</h2>
                 <HStack>
                     <button onClick={e => deletting(id)}>Yes</button>

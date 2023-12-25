@@ -7,14 +7,16 @@ import { useNavigate } from "react-router-dom";
 import { FormatDate } from "../Utitlities/formatdate";
 import { Supabase } from "../supabase";
 
-export function DashBoard(){
+export function DashBoard({ theme }){
     const [display, setDisplay] = useState(false)
     const [todelete, setToDelete] = useState(false)
     const [iddelete, setIdDelete] = useState()
     const [Usersubs, setUsersubs] = useState()
     const [total, setTotal] = useState()
-    const [check, setcheck] = useState(false)
     const [refresh, setRefresh] = useState(false)
+    const [boxcolor, setBoxColor] = useState('#ececec') 
+    const [textcolor, setTextColor] = useState('black')
+    const [classes, setClasses] = useState("add_button")
 
     var token 
     if (sessionStorage.getItem('token')){
@@ -105,6 +107,20 @@ export function DashBoard(){
                     }
     }
 
+    useEffect(() => {
+        if (theme === 'white'){
+            setBoxColor('#ececec')
+            setTextColor('black')
+            setClasses("add_button")
+        }
+        else {
+            setBoxColor('#2c3134')
+            setTextColor('white')
+            setClasses("add_button_dark")
+        }
+    } 
+    ,[theme])
+
     return (
 
             <VStack w={'80vw'}  position='relative' left={'2vw'} top={"8.5vh"}>
@@ -122,7 +138,7 @@ export function DashBoard(){
                         </div>
                     </HStack>
                 </Center>
-                <div className="add_button">
+                <div className={classes}>
                 <button onClick={e => adding()}>
                         <i className="material-symbols-outlined" id="icons" >add</i> <a>Add</a>
                     </button></div>
@@ -131,7 +147,7 @@ export function DashBoard(){
                         total = {total}/>
                     )}
                 <div className="Subs_Container" >
-                    <HStack  w="inherit" position="relative" left=".7vw">
+                    <HStack  w="inherit" position="relative" left=".7vw" color={textcolor}>
                         <p className="logo">logo</p>
                         <p className="name">Name</p>
                         <p className="price">Price</p>
@@ -140,11 +156,11 @@ export function DashBoard(){
                     <hr></hr>
                     <ul>
                     {todelete && (
-                                        <DeleteSubs setToDisplay={setToDelete} id={iddelete} />
+                                        <DeleteSubs setToDisplay={setToDelete} id={iddelete} theme={theme}/>
                                     )}
                     {Usersubs && Usersubs.map(subs => (
                         <li id={subs.id}>
-                            <HStack marginTop={"0.5vh"} bgColor="#ececec" padding={"0.7vw"} borderRadius={"5px"}>
+                            <HStack marginTop={"0.5vh"} bgColor={boxcolor} padding={"0.7vw"} borderRadius={"5px"} color={textcolor}>
                                     <p className="logo">logo</p>
                                     <p className="name">{subs.name}</p>
                                     <p className="price">${subs.price}</p>

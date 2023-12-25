@@ -28,29 +28,24 @@
 
 .Logo_Image {
     margin-left: 1vw;
-    background-image: url(Logo.png);
-    background-size: cover;
-    width: 13vw;
-    height: 8vh;
-    padding-right: 17vw;
+    width: 18vw;
+    height: 10vh;
 }
 
 .Logo_Image2 {
     margin-left: -1vw;
     margin-bottom: -50vh;
-    background-image: url(Logo.png);
-    background-size: cover;
-    width: 26vw;
-    height: 14vh;
+    width: 28vw;
+    height: 16vh;
 }
 
 .LandingPage{
-    background-image: url(Background_Image_2.png);
+    background-image: url(https://wteetmksupsiwaiqmcql.supabase.co/storage/v1/object/public/Logo/Background_Image_2.png?t=2023-11-09T05%3A01%3A15.849Z);
     background-size: cover;
 }
 
 .LoginPage {
-    background-image: url(Background_Image.png);
+    background-image: url(https://wteetmksupsiwaiqmcql.supabase.co/storage/v1/object/public/Logo/Background_Image.png?t=2023-11-09T04%3A46%3A17.022Z);
     background-size: cover;
     width: 100vw;
     height: 100vh;

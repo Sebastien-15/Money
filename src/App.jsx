@@ -4,6 +4,7 @@ import { createBrowserRouter as CBRouter,RouterProvider, } from "react-router-do
 import { LandingPage } from './Pages/LandingPage';
 import "./Styles.css"
 import "./MainAppStyle.css"
+import "./DarkMode.css"
 import { LoginPage } from './Pages/Login';
 import { MainPage } from './Pages/MainPage';
 import { DashBoard } from './Pages/Dashboard';
@@ -14,6 +15,7 @@ import Features from './Pages/Features';
 function App() {
 
   const [token, setToken] = useState()
+  const [theme, setTheme] = useState('#1c1f21')
 
   if (token){
     sessionStorage.setItem('token', JSON.stringify(token))
@@ -50,19 +52,19 @@ function App() {
     },
     {
       path: '/main_page',
-      element: <MainPage token={token}  />,
+      element: <MainPage token={token}  theme = {theme} setTheme={setTheme}/>,
       children: [
         {
           path: "main_page/dashboard",
-          element: <DashBoard />
+          element: <DashBoard theme = {theme}/>
         },
         {
           path: "main_page/history",
-          element: <History />
+          element: <History theme = {theme}/>
         },
         {
           path: "main_page/settings",
-          element: <Settings />
+          element: <Settings theme = {theme} />
         }
       ]
     }

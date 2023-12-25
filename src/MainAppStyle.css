@@ -6,7 +6,6 @@ body {
 .TopBar {
     display: flex;
     list-style-type: none;
-    justify-content: space-between;
     background-color: #111111;
     color: white;
     font-size: 24px;
@@ -15,8 +14,10 @@ body {
 }
 
 .TopBar div{
+    position: relative;
+    left: 75vw;
     width: 48px;
-    height: 48px;
+    height: 49px;
     border-radius: 24px;
     border-width: 3px;
     border-color: white;
@@ -33,9 +34,24 @@ body {
     border-radius: 24px;
 }
 
+.TopBar button {
+    position: relative;
+    top: -0.5vh;
+    right: -71vw;
+    color: white;
+    font-size: 32px;
+    margin-top: 0.5%;
+    cursor: pointer;
+    font-feature-settings: 
+    'FILL' 400,
+    'wght' 500,
+    'GRAD' 600,
+    'opsz' 700;
+}
+
 .TopBar a{
     position: relative;
-    right: -37vw;
+    right: -73vw;
     color: white;
     font-size: 32px;
     margin-top: 0.5%;
@@ -43,10 +59,10 @@ body {
 }
 
 .SideBar {
-    background-color: #8BB2CF;
+    background-color: #8bb2cf;
     width: 12vw;
     padding: 15px;
-    height: 88.9vh;
+    height: 88.8vh;
 }
 
 .SideBar ul {
@@ -95,9 +111,9 @@ body {
     font-size: 30px;
     background-image: linear-gradient(to right,
         #ff9466,
-        #fea178,
-        #fdaf8b,
-        #ffb696
+        #ff8855,
+        #fb7c46,
+        #fe7337
     );
     width: 30%;
     padding: 3%;
@@ -112,10 +128,10 @@ body {
     font-weight: 600;
     font-size: 30px;
     background-image: linear-gradient(to right,
-        #08c585,
-        #08dc92,
-        #0be599,
-        #0ff0a0
+        #0bc508,
+        #08c55d,
+        #08c53a,
+        #0bc508
     );
     width: 30%;
     padding: 3%;
@@ -257,7 +273,7 @@ body {
     align-self: self-start;
 }
 
-.add_user_box input{
+.add_user_box input, .setting_pics input, .setting_pass input{
     width: 100%;
     outline: none;
     border-bottom-width: 3px ;
@@ -266,22 +282,23 @@ body {
     border-radius: 5px;
 }
 
-.add_user_box input:focus {
+.add_user_box input:focus, .setting_pics input:focus, .setting_pass input:focus {
     transition: 0.3s;
     border-color: #c2c2c2 ;
 }
 
-.add_user_box button, .delete_subs button {
+.add_user_box button, .delete_subs button, .setting_pics button {
     background-color: #8BB2CF;
     width: 5vw;
     padding: .3vw;
+    border-radius: 5px;
 }
 
-.add_user_box button:hover, .delete_subs button:hover {
+.add_user_box button:hover, .delete_subs button:hover, .setting_pics button:hover{
     background-color: #97c0df;
 }
 
-.add_user_box button:active, .delete_subs button:active {
+.add_user_box button:active, .delete_subs button:active, .setting_pics button:active{
     background-color: #97c0df;
     color: white;
 }
@@ -326,6 +343,19 @@ body {
     padding: 5px;
 }
 
+.setting_pic {
+    border-radius: 4vw;
+    width: 8vw;
+    height:16vh ;
+    border: 1.5px solid rgb(219, 219, 219);
+}
+
+.setting_pass h1 {
+align-self: start;
+}
+
+
+
 .setting_options_li:hover , .setting_options_extra li:hover {
     background-color: rgba(0, 0, 0, 0.058);
     transition: .3s;
@@ -367,5 +397,8 @@ body {
         opacity: 1;
     }
 }
+
+
+
 
 

@@ -52,7 +52,7 @@ export function LoginPage({ setToken }){
         <>
             <form className="LoginPage" onSubmit={HandleSubmit}>
                 <Center>
-                    <div className='Logo_Image2'> </div>
+                    <img src="https://wteetmksupsiwaiqmcql.supabase.co/storage/v1/object/public/Logo/Logo.png" alt="Logo" className="Logo_Image2"></img>
                     <VStack position="fixed" w={"30vw"} marginTop={"100vh"} bgColor="white" padding={"20px"} opacity={"0.95"}>
                         <input placeholder='Email Adress' value={EmailAddress} onChange={(e) => setEmailAddress(e.target.value)}></input>
                         <input placeholder='Password' type='password' value={Password} onChange={(e) => setPassword(e.target.value)}></input>

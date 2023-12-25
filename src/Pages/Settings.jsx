@@ -1,11 +1,24 @@
 import { VStack } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ChangePassword, ChangeProfileInfo } from "../Components/SettingUtilities";
 
-export function Settings(){
+export function Settings( { theme }){
     const [Profile, setProfile] = useState(false)
     const [Pass, setPass] = useState(false)
     const [Data, setData] = useState(false)
     const [Mode, setMode] = useState(false)
+    const [textcolor, setTextColor] = useState('black')
+    const [classes, setClasses] = useState("setting_options_li")
+    
+    useEffect(() => {
+        if (theme === 'white'){
+            setTextColor('black')
+        }
+        else{
+            setTextColor('white')
+        }
+    }, 
+    [theme])
 
     function changestate(btn){
         if (btn == 1){
@@ -54,35 +67,32 @@ export function Settings(){
         }
     }
 
+    useEffect(() => {
+        if (theme === 'white'){
+            setClasses("setting_options_li")
+        }
+        else{
+            setClasses("setting_options_dark_li")
+        }
+    } ,[theme])
+
 
     return (
-        <VStack>
+        <VStack color={textcolor}>
             <h1 className="setting_h1">Settings</h1>
             <ul className="setting_options">
-                <li className="setting_options_li" onClick={e => changestate(1)}>Profile<i className="material-symbols-outlined">person</i></li>
+                <li className={classes} onClick={e => changestate(1)}>Profile<i className="material-symbols-outlined">person</i></li>
                 {Profile && (
-                    <ul className="setting_options_extra">
-                        <li>Change Name</li>
-                        <li>Change Profile Picture</li>
-                        <li>Change Email</li>
-                    </ul>
+                    <ChangeProfileInfo setProfile = {setProfile} theme = {theme} textcolor = {textcolor}/>
                 )}
-                <li className="setting_options_li" onClick={e => changestate(2)}>Manage Password<i className="material-symbols-outlined">key</i></li>
+                <li className={classes} onClick={e => changestate(2)}>Manage Password<i className="material-symbols-outlined">key</i></li>
                 {Pass && (
-                    <ul className="setting_options_extra">
-                        <li>Change Password</li>
-                    </ul>
+                    <ChangePassword setPass = {setPass} theme={theme}/>
                 )}
-                <li className="setting_options_li" onClick={e => changestate(3)}>Manage data<i className="material-symbols-outlined">analytics</i></li>
+                <li className={classes} onClick={e => changestate(3)}>Manage data<i className="material-symbols-outlined">analytics</i></li>
                 {Data && (
                     <ul className="setting_options_extra">
                         <li>Delete All Data</li>
-                    </ul>
-                )}
-                <li className="setting_options_li" onClick={e => changestate(4)}>Change Light Mode<i className="material-symbols-outlined">light_mode</i></li>
-                {Mode && (
-                    <ul className="setting_options_extra">
-                        <li>Change Mode</li>
                     </ul>
                 )}
             </ul>

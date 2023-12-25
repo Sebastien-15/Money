@@ -4,16 +4,16 @@ import { SideBar } from '../Components/SideBar';
 import { useState } from 'react';
 import { HStack } from '@chakra-ui/react';
 
-export function MainPage({ token }){
+export function MainPage({ token, theme, setTheme }){
 
-    const [page, setPage] = useState()
+    
 
     if (token){
     return (
         <>
-            <TopBar token ={token}/>
-            <HStack>
-                <SideBar />
+            <TopBar token ={token} theme={theme} setTheme = {setTheme}/>
+            <HStack bgColor={theme}>
+                <SideBar theme={theme}/>
                 <Outlet />
             </HStack>
         </>

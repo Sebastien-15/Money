@@ -73,7 +73,7 @@ export function AddUserSubs ({ setDisplay }){
     }
 
     return(
-        <section className="standout"> t
+        <section className="standout"> 
             <div className="add_user_box">
                 <form onSubmit={SubmitSubs}>
                     <VStack>
